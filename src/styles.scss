@@ -2,3 +2,19 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.card {
+  margin-bottom: 10px;
+  .card-text {
+    max-height: 100px;
+    overflow: hidden;
+  }
+  .img-fluid {
+    min-height: 160px;
+  }
+}
+
+.nav-link.active {
+  color: var(--gray-dark);
+}
