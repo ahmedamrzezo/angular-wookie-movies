@@ -10,11 +10,13 @@ import { MaterialModule } from './shared/modules/material.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { AuthorizationInterceptor } from './shared/services/authorization.interceptor';
+import { HomeComponent } from './core/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
