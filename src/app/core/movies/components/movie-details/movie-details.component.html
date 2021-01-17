@@ -1,1 +1,27 @@
-<p>movie-details works!</p>
+<section class="detail">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="detail__img">
+        <img
+          class="img-fluid"
+          [src]="selectedMovie?.backdrop"
+          [alt]="selectedMovie?.title"
+        />
+      </div>
+    </div>
+
+    <div class="col-md-7">
+      <h3 class="detail__title">
+        {{ selectedMovie?.title }}
+
+        <mark class="detail__rating">{{ selectedMovie?.imdb_rating }}</mark>
+      </h3>
+
+      <p>{{year}} | {{selectedMovie?.length}} | {{selectedMovie?.director}}</p>
+
+      <p>Cast: <strong *ngFor="let actor of selectedMovie?.cast; let last = last">{{actor}} <ng-container *ngIf="!last"> | </ng-container></strong></p>
+
+      <p>Description: {{ selectedMovie?.overview }}</p>
+    </div>
+  </div>
+</section>
