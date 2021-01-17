@@ -2,8 +2,18 @@
   <header>
     <span>Angular Wookie Movies</span>
 
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/movies" routerLinkActive="active"
+          >Movies</a
+        >
+      </li>
+    </ul>
+
     <form>
-      
       <input
         class="form-control"
         placeholder="Search movie..."
@@ -11,7 +21,6 @@
         [(ngModel)]="searchKeyword"
         (ngModelChange)="doSearch($event)"
       />
-    
     </form>
   </header>
 </mat-toolbar>
