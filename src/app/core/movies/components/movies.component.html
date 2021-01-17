@@ -1,1 +1,11 @@
-<p>movies works!</p>
+<div class="row mt-5">
+  <div class="col-md-4" *ngFor="let movie of movies$ | async">
+    <div class="card">
+      <img class="img-fluid" [src]="movie.backdrop" [alt]="movie.title">
+      <div class="card-body">
+        <h3><a [routerLink]="[movie.slug]">{{movie.title}}</a></h3>
+        <p class="card-text">{{movie.overview}}</p>
+      </div>
+    </div>
+  </div>
+</div>
