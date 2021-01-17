@@ -1,0 +1,17 @@
+<mat-toolbar>
+  <header>
+    <span>Angular Wookie Movies</span>
+
+    <form>
+      
+      <input
+        class="form-control"
+        placeholder="Search movie..."
+        name="search"
+        [(ngModel)]="searchKeyword"
+        (ngModelChange)="doSearch($event)"
+      />
+    
+    </form>
+  </header>
+</mat-toolbar>
