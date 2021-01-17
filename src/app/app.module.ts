@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
-import { MaterialModule } from './shared/modules/material.module';
+import { FeatureModule } from './shared/modules/feature.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
@@ -22,9 +22,8 @@ import { HomeComponent } from './core/home/home.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule,
 
-    MaterialModule
+    FeatureModule
   ],
   providers: [
     {
