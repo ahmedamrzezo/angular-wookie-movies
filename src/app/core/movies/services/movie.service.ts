@@ -1,7 +1,26 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class MovieService {
 
-  constructor() { }
+  movies;
+
+  constructor(private http: HttpClient) { }
+
+  getMovies(searchKeyword?: string): Observable<any[]> {
+    let params = new HttpParams();
+
+    if (searchKeyword) {
+      params = params.set('q', searchKeyword);
+    }
+
+    return this.http.get<{movies: any[]}>(`${environment.apiUrl}/movies`, { params })
+    .pipe(tap(res => (this.movies = res.movies)), map(res => res.movies));
+  }
 }
