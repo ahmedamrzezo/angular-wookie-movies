@@ -1,1 +1,15 @@
-<p>home works!</p>
+<section class="genres" *ngFor="let genre of genres">
+  <h2>Genre: {{genre}}</h2>
+  
+  <div class="row">
+    <div class="col-lg-4" *ngFor="let movie of getMovieByGenre(genre)">
+      <div class="card">
+        <img class="img-fluid" [src]="movie.backdrop" [alt]="movie.title">
+        <div class="card-body">
+          <h3><a [routerLink]="['movies', movie.slug]">{{movie.title}}</a></h3>
+          <p class="card-text">{{movie.overview}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
