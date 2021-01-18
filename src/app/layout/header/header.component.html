@@ -4,7 +4,13 @@
 
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a
+          class="nav-link"
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Home</a
+        >
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/movies" routerLinkActive="active"
@@ -13,14 +19,23 @@
       </li>
     </ul>
 
-    <form>
+    <form class="position-relative">
       <input
         class="form-control"
         placeholder="Search movie..."
         name="search"
         [(ngModel)]="searchKeyword"
-        (ngModelChange)="doSearch($event)"
+        (ngModelChange)="this.search$.next()"
       />
+
+      <div class="dropdown-menu d-block" *ngIf="results?.length">
+        <a
+          class="dropdown-item"
+          *ngFor="let movie of results"
+          [routerLink]="['movies', movie.slug]"
+          >{{ movie.title }}</a
+        >
+      </div>
     </form>
   </header>
 </mat-toolbar>
