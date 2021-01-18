@@ -13,6 +13,10 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * call http client to get movies
+   * optional @param searchKeyword
+   */
   getMovies(searchKeyword?: string): Observable<any[]> {
     let params = new HttpParams();
 

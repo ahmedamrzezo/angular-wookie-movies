@@ -21,6 +21,12 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  /**
+   * extract all genres types from the given 
+   * movies results
+   * @param movies
+   * @returns array of string (genres)
+   */
   getGenres(movies: any[]) {
     const genres =  movies.reduce((acc, curr) => {
       return acc.concat(curr.genres);
@@ -31,6 +37,10 @@ export class HomeComponent implements OnInit {
     return uniqueGenres;
   }
 
+  /**
+   * get movies from genres
+   * @param genre
+   */
   getMovieByGenre(genre: string) {
     const genreMovies = [];
     this.movies.forEach(movie => {
